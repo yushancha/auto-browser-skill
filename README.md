@@ -11,39 +11,43 @@
 - 🔐 使用本地已登录的浏览器账号
 - 💬 可以帮你回复消息
 
-## 前置要求
+## 快速开始
 
-1. **安装 Claude Code**: [官方下载](https://claude.com/download)
-2. **安装 Playwright MCP**: 在 Claude Code 中配置
-3. **本地浏览器已登录**: 你需要有一个已登录X(Twitter)或其他网站账号的浏览器
+### 第一步：安装 Claude Code
 
-## 安装步骤
+如果没有安装 Claude Code，先去官网下载安装：
+👉 [https://claude.com/download](https://claude.com/download)
 
-### 1. 配置 Playwright MCP
+### 第二步：安装 Playwright MCP（复制下面命令即可）
 
-在 Claude Code 的 `settings.json` 中添加：
-
-```json
-{
-  "mcpServers": {
-    "playwright": {
-      "command": "npx",
-      "args": ["-y", "@anthropic-ai/playwright"]
-    }
-  }
-}
+**Windows 用户复制这个命令：**
+```
+npx -y @anthropic-ai/playwright
 ```
 
-### 2. 安装 Skills
-
-将 `SKILL.md` 复制到你的 Claude Code skills 目录：
-
+**Mac/Linux 用户复制这个命令：**
 ```
-Windows: C:\Users\你的用户名\.claude\skills\
-Mac/Linux: ~/.claude/skills/
+npx -y @anthropic-ai/playwright
 ```
 
-### 3. 配置你自己的浏览器账号
+安装方法：
+1. 打开 Claude Code
+2. 按 `Ctrl + Shift + P`（Windows）或 `Cmd + Shift + P`（Mac）
+3. 输入 "MCP" 找到 "MCP Servers: Add"
+4. 选择 "Playwright"
+5. 在 Command 里粘贴上面的命令：`npx -y @anthropic-ai/playwright`
+6. 点击保存，Claude Code 会自动下载安装
+
+或者直接告诉 Claude Code："请帮我安装 Playwright MCP"，然后复制上面的命令给它。
+
+### 第三步：安装 Skills
+
+1. 下载本项目的 `SKILL.md` 文件
+2. 复制到你的 Claude Code skills 目录：
+   - **Windows**: `C:\Users\你的用户名\.claude\skills\`
+   - **Mac/Linux**: `~/.claude/skills/`
+
+### 第四步：配置你自己的浏览器账号
 
 打开 `SKILL.md`，找到"浏览器配置信息"部分，修改以下内容：
 
@@ -65,7 +69,43 @@ Mac/Linux: ~/.claude/skills/
 | "打开邮箱" | 打开Gmail查看最新邮件 |
 | "帮我回复这条消息" | 打开消息并回复 |
 
+## 详细安装教程
+
+### 方法一：通过 Claude Code 设置界面安装 MCP
+
+1. 打开 Claude Code
+2. 点击左下角的设置图标 ⚙️
+3. 点击 "MCP Servers"
+4. 点击 "Add MCP Server"
+5. 输入名称：`playwright`
+6. 在 Command 里输入：`npx -y @anthropic-ai/playwright`
+7. 点击保存
+
+保存后，Claude Code 会自动下载安装 Playwright MCP，安装成功后旁边会有绿色圆点。
+
+### 方法二：直接告诉 Claude 安装
+
+你也可以直接对 Claude Code 说：
+```
+请帮我安装 Playwright MCP
+```
+
+然后把下面的命令复制给它：
+```
+npx -y @anthropic-ai/playwright
+```
+
+Claude Code 会自动帮你安装好。
+
 ## 常见问题
+
+### Q: MCP 是什么？
+
+MCP = Model Context Protocol，是 Claude Code 的扩展功能。安装 Playwright MCP 后，Claude Code 就能控制你的浏览器进行自动化操作。
+
+### Q: 安装 MCP 需要付费吗？
+
+完全免费！Playwright MCP 是开源免费的。
 
 ### Q: 如何找到我的浏览器Profile路径？
 
@@ -88,6 +128,12 @@ Mac/Linux: ~/.claude/skills/
 1. 在浏览器中手动登录你的X(Twitter)账号
 2. 使用已登录的Profile
 
+### Q: MCP 安装成功了但不能用？
+
+1. 重启 Claude Code
+2. 检查浏览器是否已打开并登录了账号
+3. 确保调试端口没有被其他程序占用
+
 ## 配置示例
 
 ### Chrome 配置示例（Windows）
@@ -107,6 +153,7 @@ Mac/Linux: ~/.claude/skills/
 1. **安全**: 浏览器用户数据包含敏感信息，请勿分享你的用户数据目录
 2. **Profile选择**: 确保选择已登录目标账号的浏览器Profile
 3. **端口冲突**: 如果端口被占用，可以修改调试端口号
+4. **MCP 安装后**: 首次使用需要等待几秒钟让 MCP 启动完成
 
 ## 许可证
 
@@ -118,3 +165,4 @@ MIT License
 - 初始版本
 - 支持X(Twitter)、Gmail等网站自动化
 - 可配置你自己的浏览器账号
+- 详细 MCP 安装教程
