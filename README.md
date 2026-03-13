@@ -43,12 +43,16 @@ npx -y @anthropic-ai/playwright
 
 或者直接告诉 Claude Code："请帮我安装 Playwright MCP"，然后复制上面的命令给它。
 
-### 第三步：安装 Skills
+### 第三步：安装 Skills（点击这里下载 SKILL.md）
 
-1. 下载本项目的 `SKILL.md` 文件
-2. 复制到你的 Claude Code skills 目录：
-   - **Windows**: `C:\Users\你的用户名\.claude\skills\`
-   - **Mac/Linux**: `~/.claude/skills/`
+📥 **[点击下载 SKILL.md 文件](https://raw.githubusercontent.com/yushancha/auto-browser-skill/main/SKILL.md)**
+
+下载后复制到你的 Claude Code skills 目录：
+
+- **Windows**: `C:\Users\你的用户名\.claude\skills\`
+- **Mac/Linux**: `~/.claude/skills/`
+
+💡 **提示**：复制过去后 Claude Code 会自动识别这个 Skill，下次你说话时它会自动使用这个技能！
 
 ### 第四步：配置你自己的浏览器账号
 
